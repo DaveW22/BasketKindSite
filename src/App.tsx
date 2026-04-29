@@ -1,141 +1,148 @@
 import { Link, Navigate, Route, Routes } from "react-router-dom";
 import LandingPage from "./LandingPage";
-import logoLarge from "./Assets/Website Logo large.png";
+import PolicyLayout from "./PolicyLayout";
 
 function StaticPageLayout({
   title,
-  subtitle,
-  lastUpdated,
-  children
-}: {
-  title: string;
-  subtitle: string;
-  lastUpdated?: string;
-  children: JSX.Element;
-}) {
-  return (
-    <div className="site-shell legal-shell">
-      <header className="top-nav legal-top-nav">
-        <Link className="brand-lockup" to="/">
-          <img src={logoLarge} alt="Kind Basket logo" className="site-logo-large" />
-          <div>
-            <p className="brand-name">Kind Basket</p>
-            <p className="brand-sub">Smarter grocery savings</p>
+  function TermsOfUsePage() {
+    return (
+      <PolicyLayout
+        title="Terms of Use"
+        summary="These terms explain how you can use Kind Basket, what we provide, and the limits of price comparison and savings information."
+        effectiveDate="29 April 2026"
+        lastUpdated="29 April 2026"
+        version="1.0"
+        toc={
+          <ul>
+            <li><a href="#acceptance">1. Acceptance of Terms</a></li>
+            <li><a href="#about">2. About Kind Basket</a></li>
+            <li><a href="#guidance">3. Guidance-only price comparison service</a></li>
+            <li><a href="#accuracy">4. No guarantee of price accuracy, availability or savings</a></li>
+            <li><a href="#comparisons">5. Product comparisons and substitutions</a></li>
+            <li><a href="#independence">6. Retailer independence</a></li>
+            <li><a href="#accounts">7. User accounts and responsibilities</a></li>
+            <li><a href="#acceptable-use">8. Acceptable use</a></li>
+            <li><a href="#ip">9. Intellectual property and no reverse engineering</a></li>
+            <li><a href="#third-party">10. Third-party links and retailer websites</a></li>
+            <li><a href="#affiliate">11. Affiliate, gift card and commercial relationships</a></li>
+            <li><a href="#availability">12. App availability and changes</a></li>
+            <li><a href="#liability">13. Limitation of liability</a></li>
+            <li><a href="#termination">14. Termination or suspension</a></li>
+            <li><a href="#changes">15. Changes to these Terms</a></li>
+            <li><a href="#law">16. Governing law</a></li>
+            <li><a href="#contact">17. Contact details</a></li>
+          </ul>
+        }
+      >
+        <>
+          <div className="important-note-card" style={{background:'#fffbe6',borderLeft:'6px solid #e6b800',borderRadius:'1rem',padding:'1.2rem 1.5rem',marginBottom:'2rem',boxShadow:'0 2px 16px rgba(44,44,44,0.07)'}}>
+            <strong>Important pricing note:</strong> Kind Basket does not sell groceries directly. Retailers control final prices, promotions, delivery fees, substitutions and stock availability.
           </div>
-        </Link>
-
-        <nav aria-label="Policy navigation" className="desktop-nav legal-nav">
-          <Link to="/privacy-policy">Privacy Policy</Link>
-          <Link to="/terms-of-use">Terms of Use</Link>
-          <Link to="/cookie-policy">Cookie Policy</Link>
-          <Link to="/pricing-disclaimer">Pricing & Savings Disclaimer</Link>
-          <Link to="/affiliate-disclosure">Affiliate Disclosure</Link>
-          <Link to="/contact">Contact</Link>
-        function AffiliateDisclosurePage() {
-          return (
-            <StaticPageLayout
-              title="Affiliate Disclosure"
-              subtitle="Information about affiliate links, commissions, and sponsored content."
-              lastUpdated="29 April 2026"
-            >
-              <>
-                <article>
-                  <p>Kind Basket may earn a commission from certain links, purchases, or partnerships.</p>
-                  <p>This does not affect:</p>
-                  <ul>
-                    <li>Price comparisons</li>
-                    <li>Rankings</li>
-                    <li>Recommendations</li>
-                  </ul>
-                  <p>Any sponsored or promoted content will be clearly identified.</p>
-                </article>
-              </>
-            </StaticPageLayout>
-          );
-        }
-        function PricingDisclaimerPage() {
-          return (
-            <StaticPageLayout
-              title="Pricing & Savings Disclaimer"
-              subtitle="Important information about price comparisons and savings estimates."
-              lastUpdated="29 April 2026"
-            >
-              <>
-                <article>
-                  <p>Kind Basket provides price comparisons and estimated savings based on available data.</p>
-                  <ul>
-                    <li>Prices may vary by location, time, and retailer</li>
-                    <li>Data may be delayed or incomplete</li>
-                    <li>Savings are estimates and not guaranteed</li>
-                  </ul>
-                  <p>Comparisons may include:</p>
-                  <ul>
-                    <li>Equivalent products</li>
-                    <li>Similar or alternative items (clearly indicated where applicable)</li>
-                  </ul>
-                  <p>Users should verify:</p>
-                  <ul>
-                    <li>Final pricing</li>
-                    <li>Product suitability</li>
-                    <li>Availability</li>
-                  </ul>
-                  <p>Kind Basket does not control retailer pricing or stock levels.</p>
-                </article>
-              </>
-            </StaticPageLayout>
-          );
-        }
-        </nav>
-function CookiePolicyPage() {
-  return (
-    <StaticPageLayout
-      title="Cookie Policy"
-      subtitle="How Kind Basket uses cookies and similar technologies."
-      lastUpdated="29 April 2026"
-    >
-      <>
-        <article>
-          <h2>Effective Date</h2>
-          <p>29 April 2026</p>
-        </article>
-        <article>
-          <h2>1. What Are Cookies?</h2>
-          <p>Cookies are small text files stored on your device when you visit our website.</p>
-        </article>
-        <article>
-          <h2>2. Types of Cookies We Use</h2>
-          <h3>Essential Cookies</h3>
-          <p>Required for core functionality (e.g. login, security)</p>
-          <h3>Analytics Cookies</h3>
-          <p>Help us understand usage and improve the Service</p>
-          <h3>Functional Cookies</h3>
-          <p>Remember preferences and settings</p>
-        </article>
-        <article>
-          <h2>3. How We Use Cookies</h2>
-          <ul>
-            <li>Improve user experience</li>
-            <li>Analyse traffic and performance</li>
-            <li>Maintain secure sessions</li>
-          </ul>
-        </article>
-        <article>
-          <h2>4. Managing Cookies</h2>
-          <ul>
-            <li>Accept or reject cookies via the banner</li>
-            <li>Control cookies through your browser settings</li>
-          </ul>
-        </article>
-        <article>
-          <h2>5. Third-Party Cookies</h2>
-          <p>Some cookies may be set by third-party services (e.g. analytics providers).</p>
-        </article>
-        <article>
-          <h2>6. Updates</h2>
-          <p>We may update this policy periodically.</p>
-        </article>
-        <article>
-          <h2>7. Contact</h2>
+          <article id="acceptance">
+            <h2>1. Acceptance of Terms</h2>
+            <p>
+              By using the Kind Basket website or app, you agree to these Terms of Use. If you do not accept these terms, please do not use Kind Basket.
+            </p>
+          </article>
+          <article id="about">
+            <h2>2. About Kind Basket</h2>
+            <p>
+              Kind Basket is a UK-focused grocery price comparison and savings app, designed to help you make informed shopping choices. We aim to provide a friendly, transparent, and independent service.
+            </p>
+          </article>
+          <article id="guidance">
+            <h2>3. Guidance-only price comparison service</h2>
+            <p>
+              Kind Basket provides price comparisons and estimated savings for guidance only. All information is based on available data and may not reflect real-time prices or offers.
+            </p>
+          </article>
+          <article id="accuracy">
+            <h2>4. No guarantee of price accuracy, availability or savings</h2>
+            <p>
+              Prices and availability may change at any time. Estimated savings are based on available data and are not guaranteed. Always check final prices, promotions, and product details with the retailer before purchasing.
+            </p>
+          </article>
+          <article id="comparisons">
+            <h2>5. Product comparisons and substitutions</h2>
+            <p>
+              Comparisons may include equivalent, similar, or alternative products. Substitutions are clearly indicated where applicable. Please verify product suitability and details before purchase.
+            </p>
+          </article>
+          <article id="independence">
+            <h2>6. Retailer independence</h2>
+            <p>
+              Kind Basket is independent of all retailers unless explicitly stated. We do not control retailer pricing, stock, or promotions. Final purchase terms are set by the retailer.
+            </p>
+          </article>
+          <article id="accounts">
+            <h2>7. User accounts and responsibilities</h2>
+            <p>
+              If you create an account, you are responsible for keeping your login details secure and for all activity under your account. Please notify us immediately if you suspect unauthorised use.
+            </p>
+          </article>
+          <article id="acceptable-use">
+            <h2>8. Acceptable use</h2>
+            <p>
+              You agree to use Kind Basket lawfully and not to misuse, disrupt, or attempt to reverse engineer the service. Automated scraping, bulk data extraction, or any use that could harm Kind Basket or other users is not permitted.
+            </p>
+          </article>
+          <article id="ip">
+            <h2>9. Intellectual property and no reverse engineering</h2>
+            <p>
+              All content, software, branding, and systems within Kind Basket are owned by or licensed to Kind Basket Ltd and protected by intellectual property laws. You may not copy, reproduce, or reverse engineer any part of the service or use our data or systems for commercial purposes without permission.
+            </p>
+          </article>
+          <article id="third-party">
+            <h2>10. Third-party links and retailer websites</h2>
+            <p>
+              Kind Basket may link to third-party websites, including retailer sites. We are not responsible for the content, accuracy, or privacy practices of external sites. Please review retailer terms before making a purchase.
+            </p>
+          </article>
+          <article id="affiliate">
+            <h2>11. Affiliate, gift card and commercial relationships</h2>
+            <p>
+              Kind Basket may earn a commission from certain links, purchases, or partnerships. This does not affect price comparisons, rankings, or recommendations. Sponsored or promoted content will be clearly identified.
+            </p>
+          </article>
+          <article id="availability">
+            <h2>12. App availability and changes</h2>
+            <p>
+              We aim to provide a reliable service but do not guarantee uninterrupted access. Features, pricing sources, or logic may change at any time. We may suspend or discontinue parts of the service if necessary.
+            </p>
+          </article>
+          <article id="liability">
+            <h2>13. Limitation of liability</h2>
+            <p>
+              To the fullest extent permitted by law, Kind Basket Ltd is not liable for any indirect, incidental, or consequential damages arising from your use of the service. Nothing in these terms excludes legal rights that cannot be excluded under UK law.
+            </p>
+          </article>
+          <article id="termination">
+            <h2>14. Termination or suspension</h2>
+            <p>
+              We may suspend or terminate your access if you breach these terms or if fraudulent or abusive behaviour is detected.
+            </p>
+          </article>
+          <article id="changes">
+            <h2>15. Changes to these Terms</h2>
+            <p>
+              We may update these Terms at any time. Continued use of Kind Basket after changes means you accept the revised terms.
+            </p>
+          </article>
+          <article id="law">
+            <h2>16. Governing law</h2>
+            <p>
+              These Terms are governed by the laws of England and Wales.
+            </p>
+          </article>
+          <article id="contact">
+            <h2>17. Contact details</h2>
+            <p>
+              For questions about these Terms, contact <a href="mailto:hello@kindbasket.app">hello@kindbasket.app</a>.
+            </p>
+          </article>
+        </>
+      </PolicyLayout>
+    );
           <p>Contact: <a href="mailto:hello@kindbasket.app">hello@kindbasket.app</a></p>
         </article>
       </>
@@ -180,72 +187,136 @@ function CookiePolicyPage() {
 
 function PrivacyPolicyPage() {
   return (
-    <StaticPageLayout
+    <PolicyLayout
       title="Privacy Policy"
-      subtitle="How Kind Basket collects, uses, and protects your personal information."
+      summary="This policy explains what personal data we collect, why we use it, how we protect it, and the rights you have."
+      effectiveDate="29 April 2026"
       lastUpdated="29 April 2026"
+      version="1.0"
+      toc={
+        <ul>
+          <li><a href="#who">1. Who we are</a></li>
+          <li><a href="#scope">2. What this policy covers</a></li>
+          <li><a href="#data">3. Personal data we may collect</a></li>
+          <li><a href="#collection">4. How we collect data</a></li>
+          <li><a href="#why">5. Why we use your data</a></li>
+          <li><a href="#lawful">6. Lawful bases under UK GDPR</a></li>
+          <li><a href="#receipts">7. Receipt scanning and anonymised pricing insights</a></li>
+          <li><a href="#analytics">8. Analytics and product improvement</a></li>
+          <li><a href="#marketing">9. Marketing communications and consent</a></li>
+          <li><a href="#sharing">10. Sharing data with service providers</a></li>
+          <li><a href="#retailers">11. Retailer, affiliate and partner integrations</a></li>
+          <li><a href="#transfers">12. International transfers and safeguards</a></li>
+          <li><a href="#retention">13. Data retention</a></li>
+          <li><a href="#security">14. Security</a></li>
+          <li><a href="#children">15. Children’s privacy</a></li>
+          <li><a href="#rights">16. Your UK GDPR rights</a></li>
+          <li><a href="#ico">17. Right to complain to the ICO</a></li>
+          <li><a href="#changes">18. Changes to this policy</a></li>
+          <li><a href="#contact">19. Contact details</a></li>
+        </ul>
+      }
     >
       <>
-        <article>
-          <h2>Effective Date</h2>
-          <p>29 April 2026</p>
+        <div className="privacy-glance-card" style={{background:'#fffbe6',borderLeft:'6px solid #e6b800',borderRadius:'1rem',padding:'1.2rem 1.5rem',marginBottom:'2rem',boxShadow:'0 2px 16px rgba(44,44,44,0.07)'}}>
+          <strong>Your privacy at a glance:</strong>
+          <div style={{display:'flex',flexWrap:'wrap',gap:'1.2rem',marginTop:'1rem'}}>
+            <div style={{background:'#fff',borderRadius:'0.8rem',boxShadow:'0 1px 8px rgba(44,44,44,0.06)',padding:'1rem 1.2rem',flex:'1 1 180px',minWidth:'160px'}}>
+              <b>We collect only what we need</b>
+            </div>
+            <div style={{background:'#fff',borderRadius:'0.8rem',boxShadow:'0 1px 8px rgba(44,44,44,0.06)',padding:'1rem 1.2rem',flex:'1 1 180px',minWidth:'160px'}}>
+              <b>You control your data</b>
+            </div>
+            <div style={{background:'#fff',borderRadius:'0.8rem',boxShadow:'0 1px 8px rgba(44,44,44,0.06)',padding:'1rem 1.2rem',flex:'1 1 180px',minWidth:'160px'}}>
+              <b>We do not sell personal data</b>
+            </div>
+            <div style={{background:'#fff',borderRadius:'0.8rem',boxShadow:'0 1px 8px rgba(44,44,44,0.06)',padding:'1rem 1.2rem',flex:'1 1 180px',minWidth:'160px'}}>
+              <b>Receipt data is handled carefully</b>
+            </div>
+          </div>
+        </div>
+        <article id="who">
+          <h2>1. Who we are</h2>
+          <p>Kind Basket Ltd (“Kind Basket”, “we”, “us”, “our”) is the data controller. <br />Registered address: [Insert company legal name and address].</p>
         </article>
-        <article>
-          <h2>1. Overview</h2>
-          <p>We respect your privacy and are committed to protecting your personal data in accordance with UK GDPR.</p>
+        <article id="scope">
+          <h2>2. What this policy covers</h2>
+          <p>This policy applies to the Kind Basket website and mobile app. It explains what personal data we collect, how we use it, your rights, and how to contact us.</p>
         </article>
-        <article>
-          <h2>2. Data We Collect</h2>
-          <h3>A. Information You Provide</h3>
+        <article id="data">
+          <h2>3. Personal data we may collect</h2>
           <ul>
-            <li>Name, email address (account creation)</li>
+            <li>Account details (name, email, password)</li>
+            <li>Contact details</li>
             <li>Shopping lists and preferences</li>
-            <li>Uploaded receipts (if feature used)</li>
-          </ul>
-          <h3>B. Automatically Collected Data</h3>
-          <ul>
-            <li>Device type and usage data</li>
-            <li>App interactions</li>
-            <li>IP address (for security and analytics)</li>
+            <li>Device/app usage data</li>
+            <li>Location or postcode (if used for local pricing)</li>
+            <li>Receipt data (if receipt scanning is enabled)</li>
+            <li>Customer support messages</li>
           </ul>
         </article>
-        <article>
-          <h2>3. How We Use Your Data</h2>
+        <article id="collection">
+          <h2>4. How we collect data</h2>
+          <p>We collect data you provide directly (e.g. when you create an account, contact support, or use app features) and data collected automatically (e.g. device type, usage, cookies, analytics).</p>
+        </article>
+        <article id="why">
+          <h2>5. Why we use your data</h2>
           <ul>
-            <li>Provide and improve the Service</li>
-            <li>Calculate price comparisons and savings</li>
-            <li>Personalise your experience</li>
-            <li>Detect fraud or misuse</li>
-            <li>Communicate with you</li>
+            <li>To provide and improve Kind Basket</li>
+            <li>To personalise your experience</li>
+            <li>To calculate price comparisons and savings</li>
+            <li>To respond to your requests</li>
+            <li>To detect fraud or misuse</li>
+            <li>To send important updates</li>
           </ul>
         </article>
-        <article>
-          <h2>4. Legal Basis for Processing</h2>
+        <article id="lawful">
+          <h2>6. Lawful bases under UK GDPR</h2>
           <ul>
-            <li>Contract – to provide the Service</li>
-            <li>Legitimate interests – to improve functionality</li>
+            <li>Contract – to provide the service you request</li>
+            <li>Legitimate interests – to improve functionality and security</li>
             <li>Consent – for marketing and optional features</li>
+            <li>Legal obligation – where required by law</li>
           </ul>
         </article>
-        <article>
-          <h2>5. Data Sharing</h2>
-          <ul>
-            <li>Service providers (hosting, analytics, infrastructure)</li>
-            <li>Retail partners (only where necessary for functionality)</li>
-          </ul>
-          <p>We do not sell personal data.</p>
+        <article id="receipts">
+          <h2>7. Receipt scanning and anonymised pricing insights</h2>
+          <p>If you use receipt scanning, we process receipt data to extract pricing and product information. Identifiable receipt data is never sold. We may anonymise or aggregate receipt data to improve price intelligence and insights.</p>
         </article>
-        <article>
-          <h2>6. Data Retention</h2>
-          <p>We retain data only as long as necessary to:</p>
-          <ul>
-            <li>Provide the Service</li>
-            <li>Meet legal obligations</li>
-          </ul>
-          <p>You may request deletion at any time.</p>
+        <article id="analytics">
+          <h2>8. Analytics and product improvement</h2>
+          <p>We use analytics to understand how Kind Basket is used and to improve our features. Analytics data is anonymised where possible.</p>
         </article>
-        <article>
-          <h2>7. Your Rights</h2>
+        <article id="marketing">
+          <h2>9. Marketing communications and consent</h2>
+          <p>We may send you marketing communications if you have given consent. You can opt out at any time.</p>
+        </article>
+        <article id="sharing">
+          <h2>10. Sharing data with service providers</h2>
+          <p>We may share data with trusted service providers (e.g. hosting, analytics, communications) under strict confidentiality agreements. We do not sell personal data.</p>
+        </article>
+        <article id="retailers">
+          <h2>11. Retailer, affiliate and partner integrations</h2>
+          <p>We may share limited data with retail or affiliate partners only where necessary for app functionality. This does not affect your rights or our independence.</p>
+        </article>
+        <article id="transfers">
+          <h2>12. International transfers and safeguards</h2>
+          <p>If data is transferred outside the UK, we ensure appropriate safeguards are in place (e.g. Standard Contractual Clauses).</p>
+        </article>
+        <article id="retention">
+          <h2>13. Data retention</h2>
+          <p>We retain data only as long as necessary to provide the service and meet legal obligations. You may request deletion at any time.</p>
+        </article>
+        <article id="security">
+          <h2>14. Security</h2>
+          <p>We use technical and organisational measures to protect your data. However, no system is completely secure.</p>
+        </article>
+        <article id="children">
+          <h2>15. Children’s privacy</h2>
+          <p>Kind Basket is not intended for children under 16. We do not knowingly collect personal data from children.</p>
+        </article>
+        <article id="rights">
+          <h2>16. Your UK GDPR rights</h2>
           <ul>
             <li>Access your data</li>
             <li>Correct inaccuracies</li>
@@ -253,43 +324,52 @@ function PrivacyPolicyPage() {
             <li>Restrict or object to processing</li>
             <li>Data portability</li>
           </ul>
-          <p>Contact: <a href="mailto:hello@kindbasket.app">hello@kindbasket.app</a></p>
+          <p>Contact us to exercise your rights: <a href="mailto:hello@kindbasket.app">hello@kindbasket.app</a></p>
         </article>
-        <article>
-          <h2>8. Receipt Scanning (If Used)</h2>
-          <ul>
-            <li>Data is processed to extract pricing information</li>
-            <li>Personal identifiers should be minimised</li>
-            <li>Data may be anonymised for analytics</li>
-          </ul>
+        <article id="ico">
+          <h2>17. Right to complain to the ICO</h2>
+          <p>You have the right to complain to the UK Information Commissioner’s Office (ICO) if you believe your data has been mishandled.</p>
         </article>
-        <article>
-          <h2>9. Security</h2>
-          <p>We implement appropriate technical and organisational measures to protect your data.</p>
+        <article id="changes">
+          <h2>18. Changes to this policy</h2>
+          <p>We may update this policy periodically. We will notify you of significant changes.</p>
         </article>
-        <article>
-          <h2>10. International Transfers</h2>
-          <p>If data is processed outside the UK, we ensure appropriate safeguards are in place.</p>
-        </article>
-        <article>
-          <h2>11. Updates</h2>
-          <p>We may update this policy periodically.</p>
-        </article>
-        <article>
-          <h2>12. Contact</h2>
+        <article id="contact">
+          <h2>19. Contact details</h2>
           <p>Contact: <a href="mailto:hello@kindbasket.app">hello@kindbasket.app</a></p>
         </article>
       </>
-    </StaticPageLayout>
+    </PolicyLayout>
   );
 }
 
 function TermsOfUsePage() {
   return (
-    <StaticPageLayout
+    <PolicyLayout
       title="Terms of Use"
-      subtitle="The terms that apply when you use the Kind Basket website, app, and related services."
+      summary="The terms that apply when you use the Kind Basket website, app, and related services."
+      effectiveDate="29 April 2026"
       lastUpdated="29 April 2026"
+      version="1.0"
+      toc={
+        <ul>
+          <li><a href="#company">Company</a></li>
+          <li><a href="#acceptance">1. Acceptance of Terms</a></li>
+          <li><a href="#description">2. Description of Service</a></li>
+          <li><a href="#accuracy">3. No Guarantee of Accuracy or Savings</a></li>
+          <li><a href="#comparisons">4. Product Comparisons &amp; Substitutions</a></li>
+          <li><a href="#independence">5. Retailer Independence</a></li>
+          <li><a href="#affiliate">6. Affiliate &amp; Revenue Disclosure</a></li>
+          <li><a href="#user">7. User Responsibilities</a></li>
+          <li><a href="#ip">8. Intellectual Property</a></li>
+          <li><a href="#liability">9. Limitation of Liability</a></li>
+          <li><a href="#availability">10. Availability of Service</a></li>
+          <li><a href="#termination">11. Termination</a></li>
+          <li><a href="#changes">12. Changes to Terms</a></li>
+          <li><a href="#law">13. Governing Law</a></li>
+          <li><a href="#contact">14. Contact</a></li>
+        </ul>
+      }
     >
       <>
         <article>
@@ -400,6 +480,7 @@ function TermsOfUsePage() {
           <p>For questions about these Terms, contact <a href="mailto:hello@kindbasket.app">hello@kindbasket.app</a>.</p>
         </article>
       </>
+    </PolicyLayout>
     </StaticPageLayout>
   );
 }
@@ -448,6 +529,196 @@ function ContactPage() {
   );
 }
 
+function PricingDisclaimerPage() {
+  return (
+    <PolicyLayout
+      title="Pricing & Savings Disclaimer"
+      summary="Kind Basket helps you compare prices and estimate savings, but final prices, stock and promotions are controlled by retailers."
+      effectiveDate="29 April 2026"
+      lastUpdated="29 April 2026"
+      version="1.0"
+      toc={
+        <ul>
+          <li><a href="#cover">1. What this disclaimer covers</a></li>
+          <li><a href="#estimates">2. Prices are estimates based on available data</a></li>
+          <li><a href="#final">3. Final retailer prices may differ</a></li>
+          <li><a href="#availability">4. Product availability may change</a></li>
+          <li><a href="#promotions">5. Promotions, loyalty pricing and vouchers</a></li>
+          <li><a href="#fees">6. Delivery fees, service fees and minimum basket rules</a></li>
+          <li><a href="#substitutions">7. Substitutions and similar products</a></li>
+          <li><a href="#unit">8. Unit pricing, pack sizes and product matching</a></li>
+          <li><a href="#savings">9. Savings calculations and comparison basis</a></li>
+          <li><a href="#cheapest">10. “Cheapest” and “best value” explanations</a></li>
+          <li><a href="#freshness">11. Data freshness and last-updated labels</a></li>
+          <li><a href="#responsibility">12. User responsibility to check before purchase</a></li>
+          <li><a href="#noguarantee">13. No guarantee of savings</a></li>
+          <li><a href="#reporting">14. Reporting incorrect prices</a></li>
+          <li><a href="#contact">15. Contact details</a></li>
+        </ul>
+      }
+    >
+      <>
+        <div style={{background:'#fffbe6',borderLeft:'6px solid #e6b800',borderRadius:'1rem',padding:'1.2rem 1.5rem',marginBottom:'2rem',boxShadow:'0 2px 16px rgba(44,44,44,0.07)'}}>
+          <strong>How we calculate estimated savings:</strong> Estimated savings are calculated by comparing the available price of items in your list against another available retailer price or selected baseline. Where products are not identical, they should be labelled as similar or substitute items.
+        </div>
+        <div style={{display:'flex',gap:'1.2rem',flexWrap:'wrap',marginBottom:'2rem'}}>
+          <div style={{background:'#fff',borderRadius:'0.8rem',boxShadow:'0 1px 8px rgba(44,44,44,0.06)',padding:'0.8rem 1.2rem',minWidth:'180px',fontWeight:600,color:'#184c32'}}>Estimated saving: £4.20</div>
+          <div style={{background:'#fff',borderRadius:'0.8rem',boxShadow:'0 1px 8px rgba(44,44,44,0.06)',padding:'0.8rem 1.2rem',minWidth:'180px',fontWeight:600,color:'#184c32'}}>Price last updated: 2 hours ago</div>
+          <div style={{background:'#fff',borderRadius:'0.8rem',boxShadow:'0 1px 8px rgba(44,44,44,0.06)',padding:'0.8rem 1.2rem',minWidth:'180px',fontWeight:600,color:'#184c32'}}>Similar product, not identical</div>
+          <div style={{background:'#fff',borderRadius:'0.8rem',boxShadow:'0 1px 8px rgba(44,44,44,0.06)',padding:'0.8rem 1.2rem',minWidth:'180px',fontWeight:600,color:'#184c32'}}>Final price confirmed by retailer</div>
+        </div>
+        <article id="cover">
+          <h2>1. What this disclaimer covers</h2>
+          <p>This disclaimer explains the limits of Kind Basket’s price comparison and savings estimates. It applies to all price, savings, and value information shown on our website and app.</p>
+        </article>
+        <article id="estimates">
+          <h2>2. Prices are estimates based on available data</h2>
+          <p>All prices and savings shown are estimates based on the latest data we can access. Prices may change at any time and may not reflect real-time offers or in-store prices.</p>
+        </article>
+        <article id="final">
+          <h2>3. Final retailer prices may differ</h2>
+          <p>Final prices, promotions, and discounts are set by the retailer. Always check the retailer’s website or app for the most up-to-date price before purchasing.</p>
+        </article>
+        <article id="availability">
+          <h2>4. Product availability may change</h2>
+          <p>Product availability can change quickly. Items may go out of stock or be replaced by similar products at the retailer’s discretion.</p>
+        </article>
+        <article id="promotions">
+          <h2>5. Promotions, loyalty pricing and vouchers</h2>
+          <p>Some prices may require a loyalty card, voucher, or be part of a limited-time promotion. These may not always be reflected in our estimates.</p>
+        </article>
+        <article id="fees">
+          <h2>6. Delivery fees, service fees and minimum basket rules</h2>
+          <p>Delivery and service fees, as well as minimum basket requirements, are not always included in price comparisons. Please check these with the retailer before ordering.</p>
+        </article>
+        <article id="substitutions">
+          <h2>7. Substitutions and similar products</h2>
+          <p>Where an exact product match is not available, we may show similar or substitute items. These will be clearly labelled and may differ in size, brand, or features.</p>
+        </article>
+        <article id="unit">
+          <h2>8. Unit pricing, pack sizes and product matching</h2>
+          <p>We aim to match products as closely as possible, but differences in pack size or unit pricing may affect comparisons. Always check product details before purchase.</p>
+        </article>
+        <article id="savings">
+          <h2>9. Savings calculations and comparison basis</h2>
+          <p>Estimated savings are based on comparing the available price of your selected items with another retailer or baseline. Where products are not identical, this will be indicated.</p>
+        </article>
+        <article id="cheapest">
+          <h2>10. “Cheapest” and “best value” explanations</h2>
+          <p>We use terms like “cheapest” or “best value” to indicate estimated savings based on available data. These are not guarantees and may vary depending on offers, substitutions, or product differences.</p>
+        </article>
+        <article id="freshness">
+          <h2>11. Data freshness and last-updated labels</h2>
+          <p>We display “last updated” labels where possible. Data may be delayed or updated at different times for different retailers.</p>
+        </article>
+        <article id="responsibility">
+          <h2>12. User responsibility to check before purchase</h2>
+          <p>It is your responsibility to check final prices, product details, and terms with the retailer before making a purchase.</p>
+        </article>
+        <article id="noguarantee">
+          <h2>13. No guarantee of savings</h2>
+          <p>Estimated savings are for guidance only and are not guaranteed. Actual savings may vary depending on retailer pricing, offers, and substitutions.</p>
+        </article>
+        <article id="reporting">
+          <h2>14. Reporting incorrect prices</h2>
+          <p>If you spot an incorrect price or product, please let us know so we can investigate and update our data.</p>
+        </article>
+        <article id="contact">
+          <h2>15. Contact details</h2>
+          <p>Contact: <a href="mailto:hello@kindbasket.app">hello@kindbasket.app</a></p>
+        </article>
+      </>
+    </PolicyLayout>
+  );
+}
+
+function AffiliateDisclosurePage() {
+  return (
+    <PolicyLayout
+      title="Affiliate & Commercial Disclosure"
+      summary="Kind Basket may earn money from some links, gift cards, partnerships or retailer integrations, but we aim to keep recommendations transparent and user-first."
+      effectiveDate="29 April 2026"
+      lastUpdated="29 April 2026"
+      version="1.0"
+      toc={
+        <ul>
+          <li><a href="#why">1. Why this disclosure matters</a></li>
+          <li><a href="#how">2. How Kind Basket may earn revenue</a></li>
+          <li><a href="#rankings">3. How commercial relationships affect rankings</a></li>
+          <li><a href="#sponsored">4. Sponsored or promoted results</a></li>
+          <li><a href="#giftcards">5. Gift cards and cashback-style savings</a></li>
+          <li><a href="#independence">6. Retailer independence</a></li>
+          <li><a href="#userfirst">7. User-first recommendation principles</a></li>
+          <li><a href="#labelling">8. Clear labelling commitments</a></li>
+          <li><a href="#changes">9. Changes to commercial relationships</a></li>
+          <li><a href="#contact">10. Contact details</a></li>
+        </ul>
+      }
+    >
+      <>
+        <div style={{background:'#fffbe6',borderLeft:'6px solid #e6b800',borderRadius:'1rem',padding:'1.2rem 1.5rem',marginBottom:'2rem',boxShadow:'0 2px 16px rgba(44,44,44,0.07)'}}>
+          <strong>Transparency pledge:</strong> We will clearly label paid, sponsored or promoted placements. Estimated savings should not be hidden or inflated because of a commercial relationship.
+        </div>
+        <div style={{background:'#fff',borderRadius:'1rem',boxShadow:'0 1px 8px rgba(44,44,44,0.06)',padding:'1.2rem 1.5rem',marginBottom:'2rem'}}>
+          <strong>What we will not do:</strong>
+          <ul style={{margin:'0.7rem 0 0 1.2rem',padding:0}}>
+            <li>We will not secretly sell placement as organic ranking</li>
+            <li>We will not hide material commercial relationships</li>
+            <li>We will not claim guaranteed savings where savings are only estimated</li>
+            <li>We will not sell personal data</li>
+          </ul>
+        </div>
+        <article id="why">
+          <h2>1. Why this disclosure matters</h2>
+          <p>Transparency about how Kind Basket earns revenue helps you trust our recommendations and understand any potential influences on rankings or offers.</p>
+        </article>
+        <article id="how">
+          <h2>2. How Kind Basket may earn revenue</h2>
+          <ul>
+            <li>Affiliate links: We may earn a commission if you click a link and make a purchase.</li>
+            <li>Gift card partnerships: We may offer or promote gift cards in partnership with retailers.</li>
+            <li>Sponsored placements: If ever used, these will be clearly labelled as sponsored or promoted.</li>
+            <li>Retailer integrations: We may receive fees for technical integrations or referrals.</li>
+            <li>Premium features: If introduced, some features may be paid or subscription-based.</li>
+          </ul>
+        </article>
+        <article id="rankings">
+          <h2>3. How commercial relationships affect rankings</h2>
+          <p>We aim to keep rankings and recommendations user-first. Commercial relationships do not guarantee higher placement. Sponsored or promoted results will always be clearly labelled.</p>
+        </article>
+        <article id="sponsored">
+          <h2>4. Sponsored or promoted results</h2>
+          <p>If we ever display sponsored or promoted results, these will be clearly marked so you can distinguish them from organic results.</p>
+        </article>
+        <article id="giftcards">
+          <h2>5. Gift cards and cashback-style savings</h2>
+          <p>We may offer gift cards or cashback-style savings in partnership with retailers. These offers will be clearly described and are subject to terms.</p>
+        </article>
+        <article id="independence">
+          <h2>6. Retailer independence</h2>
+          <p>Kind Basket is independent of all retailers unless explicitly stated. Commercial relationships do not affect our commitment to transparency and user trust.</p>
+        </article>
+        <article id="userfirst">
+          <h2>7. User-first recommendation principles</h2>
+          <p>Our recommendations are based on what we believe is best for users, not on commercial incentives. We prioritise transparency, accuracy, and user value.</p>
+        </article>
+        <article id="labelling">
+          <h2>8. Clear labelling commitments</h2>
+          <p>We commit to clearly labelling all paid, sponsored, or affiliate content so you can make informed choices.</p>
+        </article>
+        <article id="changes">
+          <h2>9. Changes to commercial relationships</h2>
+          <p>We may update our commercial relationships from time to time. Significant changes will be reflected in this disclosure.</p>
+        </article>
+        <article id="contact">
+          <h2>10. Contact details</h2>
+          <p>Contact: <a href="mailto:hello@kindbasket.app">hello@kindbasket.app</a></p>
+        </article>
+      </>
+    </PolicyLayout>
+  );
+}
+
 function App() {
   return (
     <Routes>
@@ -464,3 +735,89 @@ function App() {
 }
 
 export default App;
+
+function LegalHubPage() {
+  return (
+    <div style={{background:'#f8f7f3',minHeight:'100vh',display:'flex',flexDirection:'column'}}>
+      <header className="site-header" style={{background:'#fff',boxShadow:'0 2px 16px rgba(44,44,44,0.07)',padding:'1.2rem 0 1.2rem 0',marginBottom:'2rem'}}>
+        <div className="container" style={{display:'flex',alignItems:'center',justifyContent:'space-between',maxWidth:'1100px',margin:'0 auto',padding:'0 1.5rem'}}>
+          <Link to="/" className="brand-logo" style={{display:'flex',alignItems:'center',gap:'0.7rem',textDecoration:'none'}}>
+            <span style={{fontWeight:700,fontSize:'1.5rem',color:'#184c32'}}>🧺 Kind Basket</span>
+          </Link>
+          <nav style={{display:'flex',gap:'1.2rem'}}>
+            <Link to="/legal-hub" style={{color:'#184c32',fontWeight:600}}>Legal Hub</Link>
+            <Link to="/contact" style={{color:'#184c32',fontWeight:600}}>Contact</Link>
+          </nav>
+        </div>
+      </header>
+      <main className="legal-hub-main" style={{flex:1}}>
+        <section className="legal-hub-hero" style={{textAlign:'center',marginBottom:'2.5rem'}}>
+          <h1 style={{fontSize:'2.5rem',fontWeight:800,color:'#184c32',marginBottom:'0.5rem'}}>Legal & Trust Centre</h1>
+          <p style={{fontSize:'1.2rem',color:'#184c32',maxWidth:'600px',margin:'0 auto'}}>Clear information about how Kind Basket works, how we use data, and how we keep price comparisons transparent.</p>
+        </section>
+        <section className="legal-hub-cards" style={{display:'flex',flexWrap:'wrap',gap:'2rem',justifyContent:'center',marginBottom:'2.5rem'}}>
+          <Link to="/terms-of-use" style={cardStyle}><span style={iconStyle}>📜</span> Terms of Use</Link>
+          <Link to="/privacy-policy" style={cardStyle}><span style={iconStyle}>🔒</span> Privacy Policy</Link>
+          <Link to="/cookie-policy" style={cardStyle}><span style={iconStyle}>🍪</span> Cookie Policy</Link>
+          <Link to="/pricing-disclaimer" style={cardStyle}><span style={iconStyle}>💷</span> Pricing & Savings Disclaimer</Link>
+          <Link to="/affiliate-disclosure" style={cardStyle}><span style={iconStyle}>🤝</span> Affiliate & Commercial Disclosure</Link>
+        </section>
+        <section className="trust-principles" style={{maxWidth:'700px',margin:'0 auto 2.5rem auto',background:'#fff',borderRadius:'1rem',boxShadow:'0 1px 8px rgba(44,44,44,0.06)',padding:'2rem 1.5rem'}}>
+          <h2 style={{color:'#184c32',fontWeight:700,fontSize:'1.3rem',marginBottom:'1rem'}}>Our Trust Principles</h2>
+          <ul style={{listStyle:'none',padding:0,margin:0,display:'grid',gap:'0.7rem'}}>
+            <li style={principleStyle}><span style={iconStyle}>💡</span> Transparent pricing</li>
+            <li style={principleStyle}><span style={iconStyle}>🏷️</span> Estimated savings clearly labelled</li>
+            <li style={principleStyle}><span style={iconStyle}>🛡️</span> Privacy-first data handling</li>
+            <li style={principleStyle}><span style={iconStyle}>🧺</span> Independent from retailers unless stated</li>
+          </ul>
+        </section>
+      </main>
+      <footer className="site-footer" style={{background:'#fff',boxShadow:'0 -2px 16px rgba(44,44,44,0.07)',padding:'2rem 0 1rem 0',marginTop:'2rem'}}>
+        <div className="container" style={{maxWidth:'1100px',margin:'0 auto',padding:'0 1.5rem',display:'flex',flexDirection:'column',alignItems:'center',gap:'0.7rem'}}>
+          <nav aria-label="Footer links" className="footer-links" style={{display:'flex',gap:'1.2rem',flexWrap:'wrap',justifyContent:'center'}}>
+            <Link to="/privacy-policy">Privacy Policy</Link>
+            <Link to="/terms-of-use">Terms of Use</Link>
+            <Link to="/cookie-policy">Cookie Policy</Link>
+            <Link to="/pricing-disclaimer">Pricing Disclaimer</Link>
+            <Link to="/affiliate-disclosure">Affiliate Disclosure</Link>
+            <Link to="/contact">Contact</Link>
+          </nav>
+          <p style={{color:'#184c32',fontSize:'1rem'}}>Contact: <a href="mailto:hello@kindbasket.app" style={{color:'#184c32',textDecoration:'underline'}}>hello@kindbasket.app</a></p>
+          <p style={{color:'#184c32',fontSize:'0.95rem'}}>Copyright 2026 Kind Basket</p>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+const cardStyle = {
+  background: '#fff',
+  borderRadius: '1rem',
+  boxShadow: '0 1px 8px rgba(44,44,44,0.06)',
+  padding: '1.5rem 2rem',
+  minWidth: '220px',
+  minHeight: '110px',
+  display: 'flex',
+  alignItems: 'center',
+  gap: '1rem',
+  fontWeight: 700,
+  fontSize: '1.15rem',
+  color: '#184c32',
+  textDecoration: 'none',
+  border: '2px solid #f8f7f3',
+  transition: 'border 0.2s',
+};
+const iconStyle = {
+  fontSize: '2rem',
+  marginRight: '0.5rem',
+};
+const principleStyle = {
+  background: '#f8f7f3',
+  borderRadius: '0.7rem',
+  padding: '0.8rem 1.2rem',
+  color: '#184c32',
+  fontWeight: 600,
+  display: 'flex',
+  alignItems: 'center',
+  gap: '0.7rem',
+};
