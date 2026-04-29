@@ -28,7 +28,7 @@ function CookieConsentBanner() {
 }
 import { ValidationError, useForm } from "@formspree/react";
 import { Link } from "react-router-dom";
-import logoLarge from "./assets/Website Logo large.png";
+import logoLarge from "./Assets/Website Logo large.png";
 
 type IconName =
   | "list"

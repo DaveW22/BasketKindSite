@@ -1,6 +1,6 @@
 import { Link, Navigate, Route, Routes } from "react-router-dom";
 import LandingPage from "./LandingPage";
-import logoLarge from "./assets/Website Logo large.png";
+import logoLarge from "./Assets/Website Logo large.png";
 
 function StaticPageLayout({
   title,
