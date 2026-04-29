@@ -27,8 +27,121 @@ function StaticPageLayout({
         <nav aria-label="Policy navigation" className="desktop-nav legal-nav">
           <Link to="/privacy-policy">Privacy Policy</Link>
           <Link to="/terms-of-use">Terms of Use</Link>
+          <Link to="/cookie-policy">Cookie Policy</Link>
+          <Link to="/pricing-disclaimer">Pricing & Savings Disclaimer</Link>
+          <Link to="/affiliate-disclosure">Affiliate Disclosure</Link>
           <Link to="/contact">Contact</Link>
+        function AffiliateDisclosurePage() {
+          return (
+            <StaticPageLayout
+              title="Affiliate Disclosure"
+              subtitle="Information about affiliate links, commissions, and sponsored content."
+              lastUpdated="29 April 2026"
+            >
+              <>
+                <article>
+                  <p>Kind Basket may earn a commission from certain links, purchases, or partnerships.</p>
+                  <p>This does not affect:</p>
+                  <ul>
+                    <li>Price comparisons</li>
+                    <li>Rankings</li>
+                    <li>Recommendations</li>
+                  </ul>
+                  <p>Any sponsored or promoted content will be clearly identified.</p>
+                </article>
+              </>
+            </StaticPageLayout>
+          );
+        }
+        function PricingDisclaimerPage() {
+          return (
+            <StaticPageLayout
+              title="Pricing & Savings Disclaimer"
+              subtitle="Important information about price comparisons and savings estimates."
+              lastUpdated="29 April 2026"
+            >
+              <>
+                <article>
+                  <p>Kind Basket provides price comparisons and estimated savings based on available data.</p>
+                  <ul>
+                    <li>Prices may vary by location, time, and retailer</li>
+                    <li>Data may be delayed or incomplete</li>
+                    <li>Savings are estimates and not guaranteed</li>
+                  </ul>
+                  <p>Comparisons may include:</p>
+                  <ul>
+                    <li>Equivalent products</li>
+                    <li>Similar or alternative items (clearly indicated where applicable)</li>
+                  </ul>
+                  <p>Users should verify:</p>
+                  <ul>
+                    <li>Final pricing</li>
+                    <li>Product suitability</li>
+                    <li>Availability</li>
+                  </ul>
+                  <p>Kind Basket does not control retailer pricing or stock levels.</p>
+                </article>
+              </>
+            </StaticPageLayout>
+          );
+        }
         </nav>
+function CookiePolicyPage() {
+  return (
+    <StaticPageLayout
+      title="Cookie Policy"
+      subtitle="How Kind Basket uses cookies and similar technologies."
+      lastUpdated="29 April 2026"
+    >
+      <>
+        <article>
+          <h2>Effective Date</h2>
+          <p>29 April 2026</p>
+        </article>
+        <article>
+          <h2>1. What Are Cookies?</h2>
+          <p>Cookies are small text files stored on your device when you visit our website.</p>
+        </article>
+        <article>
+          <h2>2. Types of Cookies We Use</h2>
+          <h3>Essential Cookies</h3>
+          <p>Required for core functionality (e.g. login, security)</p>
+          <h3>Analytics Cookies</h3>
+          <p>Help us understand usage and improve the Service</p>
+          <h3>Functional Cookies</h3>
+          <p>Remember preferences and settings</p>
+        </article>
+        <article>
+          <h2>3. How We Use Cookies</h2>
+          <ul>
+            <li>Improve user experience</li>
+            <li>Analyse traffic and performance</li>
+            <li>Maintain secure sessions</li>
+          </ul>
+        </article>
+        <article>
+          <h2>4. Managing Cookies</h2>
+          <ul>
+            <li>Accept or reject cookies via the banner</li>
+            <li>Control cookies through your browser settings</li>
+          </ul>
+        </article>
+        <article>
+          <h2>5. Third-Party Cookies</h2>
+          <p>Some cookies may be set by third-party services (e.g. analytics providers).</p>
+        </article>
+        <article>
+          <h2>6. Updates</h2>
+          <p>We may update this policy periodically.</p>
+        </article>
+        <article>
+          <h2>7. Contact</h2>
+          <p>Contact: <a href="mailto:hello@kindbasket.app">hello@kindbasket.app</a></p>
+        </article>
+      </>
+    </StaticPageLayout>
+  );
+}
 
         <Link className="btn btn-secondary nav-cta" to="/">
           Back to home
@@ -70,68 +183,101 @@ function PrivacyPolicyPage() {
     <StaticPageLayout
       title="Privacy Policy"
       subtitle="How Kind Basket collects, uses, and protects your personal information."
-       
+      lastUpdated="29 April 2026"
     >
       <>
         <article>
-          <h2>1. Who we are (Data Controller)</h2>
-          <p>
-            Kind Basket Ltd, 20-22 Wenlock Road, London, N1 7GU, United Kingdom, is the data controller for your personal data. For privacy enquiries, contact <a href="mailto:hello@kindbasket.app">hello@kindbasket.app</a>.
-          </p>
+          <h2>Effective Date</h2>
+          <p>29 April 2026</p>
         </article>
         <article>
-          <h2>2. Information we collect</h2>
-          <p>
-            We may collect information you provide directly, such as your email address when you join the waitlist, and information needed to support app features like shopping lists, savings history, and loyalty card storage.
-          </p>
+          <h2>1. Overview</h2>
+          <p>We respect your privacy and are committed to protecting your personal data in accordance with UK GDPR.</p>
         </article>
         <article>
-          <h2>3. How we use your information</h2>
-          <p>
-            We use your information to provide and improve Kind Basket, send product updates, respond to enquiries, and keep the app secure and reliable.
-          </p>
+          <h2>2. Data We Collect</h2>
+          <h3>A. Information You Provide</h3>
+          <ul>
+            <li>Name, email address (account creation)</li>
+            <li>Shopping lists and preferences</li>
+            <li>Uploaded receipts (if feature used)</li>
+          </ul>
+          <h3>B. Automatically Collected Data</h3>
+          <ul>
+            <li>Device type and usage data</li>
+            <li>App interactions</li>
+            <li>IP address (for security and analytics)</li>
+          </ul>
         </article>
         <article>
-          <h2>4. Legal basis and retention</h2>
-          <p>
-            Where applicable, we process personal data based on consent, contractual necessity, and legitimate interests. We keep information only as long as needed for the purposes described in this policy or to meet legal obligations.
-          </p>
+          <h2>3. How We Use Your Data</h2>
+          <ul>
+            <li>Provide and improve the Service</li>
+            <li>Calculate price comparisons and savings</li>
+            <li>Personalise your experience</li>
+            <li>Detect fraud or misuse</li>
+            <li>Communicate with you</li>
+          </ul>
         </article>
         <article>
-          <h2>5. Sharing information</h2>
-          <p>
-            We do not sell personal data. We may share limited data with trusted service providers that help operate Kind Basket, such as analytics, hosting, and communications tools, under appropriate safeguards. Data may be transferred outside the UK/EEA only where adequate protections (such as Standard Contractual Clauses) are in place.
-          </p>
+          <h2>4. Legal Basis for Processing</h2>
+          <ul>
+            <li>Contract – to provide the Service</li>
+            <li>Legitimate interests – to improve functionality</li>
+            <li>Consent – for marketing and optional features</li>
+          </ul>
         </article>
         <article>
-          <h2>6. Automated decision-making</h2>
-          <p>
-            We do not use your data for automated decision-making or profiling.
-          </p>
+          <h2>5. Data Sharing</h2>
+          <ul>
+            <li>Service providers (hosting, analytics, infrastructure)</li>
+            <li>Retail partners (only where necessary for functionality)</li>
+          </ul>
+          <p>We do not sell personal data.</p>
         </article>
         <article>
-          <h2>7. Children’s privacy</h2>
-          <p>
-            Kind Basket is not intended for children under 16. We do not knowingly collect personal data from children. If you believe a child has provided us with personal data, please contact us for removal.
-          </p>
+          <h2>6. Data Retention</h2>
+          <p>We retain data only as long as necessary to:</p>
+          <ul>
+            <li>Provide the Service</li>
+            <li>Meet legal obligations</li>
+          </ul>
+          <p>You may request deletion at any time.</p>
         </article>
         <article>
-          <h2>8. Your rights</h2>
-          <p>
-            You have the right to access, correct, delete, or restrict use of your personal data. You can also object to certain processing and request portability where available. You also have the right to lodge a complaint with the UK Information Commissioner’s Office (ICO).
-          </p>
+          <h2>7. Your Rights</h2>
+          <ul>
+            <li>Access your data</li>
+            <li>Correct inaccuracies</li>
+            <li>Request deletion</li>
+            <li>Restrict or object to processing</li>
+            <li>Data portability</li>
+          </ul>
+          <p>Contact: <a href="mailto:hello@kindbasket.app">hello@kindbasket.app</a></p>
         </article>
         <article>
-          <h2>9. Cookies and tracking</h2>
-          <p>
-            We use cookies and similar technologies for essential site functionality and analytics. For details, see our Cookie Policy.
-          </p>
+          <h2>8. Receipt Scanning (If Used)</h2>
+          <ul>
+            <li>Data is processed to extract pricing information</li>
+            <li>Personal identifiers should be minimised</li>
+            <li>Data may be anonymised for analytics</li>
+          </ul>
         </article>
         <article>
-          <h2>10. Contact about privacy</h2>
-          <p>
-            For privacy requests, contact us via the Contact page and include enough detail for us to verify and process your request.
-          </p>
+          <h2>9. Security</h2>
+          <p>We implement appropriate technical and organisational measures to protect your data.</p>
+        </article>
+        <article>
+          <h2>10. International Transfers</h2>
+          <p>If data is processed outside the UK, we ensure appropriate safeguards are in place.</p>
+        </article>
+        <article>
+          <h2>11. Updates</h2>
+          <p>We may update this policy periodically.</p>
+        </article>
+        <article>
+          <h2>12. Contact</h2>
+          <p>Contact: <a href="mailto:hello@kindbasket.app">hello@kindbasket.app</a></p>
         </article>
       </>
     </StaticPageLayout>
@@ -142,69 +288,116 @@ function TermsOfUsePage() {
   return (
     <StaticPageLayout
       title="Terms of Use"
-      subtitle="The terms that apply when you use the Kind Basket website and app services."
-       
+      subtitle="The terms that apply when you use the Kind Basket website, app, and related services."
+      lastUpdated="29 April 2026"
     >
       <>
         <article>
-          <h2>1. Using Kind Basket</h2>
+          <h2>Effective Date</h2>
+          <p>29 April 2026</p>
+        </article>
+        <article>
+          <h2>Company</h2>
+          <p>Kind Basket Ltd (“Kind Basket”, “we”, “us”, “our”)</p>
+        </article>
+        <article>
+          <h2>1. Acceptance of Terms</h2>
           <p>
-            By using Kind Basket, you agree to use the service lawfully and in a way that does not harm the platform or other users.
+            By accessing or using the Kind Basket mobile application, website, or related services (the “Service”), you agree to be bound by these Terms. If you do not agree, you must not use the Service.
           </p>
         </article>
         <article>
-          <h2>2. Accuracy of savings and prices</h2>
+          <h2>2. Description of Service</h2>
+          <ul>
+            <li>Compare grocery prices across retailers</li>
+            <li>Estimate potential savings</li>
+            <li>Suggest alternative or substitute products</li>
+            <li>Organise shopping lists</li>
+          </ul>
+          <p>All information is provided for guidance purposes only.</p>
+        </article>
+        <article>
+          <h2>3. No Guarantee of Accuracy or Savings</h2>
+          <ul>
+            <li>Prices may change at any time</li>
+            <li>Data may be delayed, estimated, or sourced from third parties</li>
+            <li>Product availability may vary by location</li>
+          </ul>
           <p>
-            Kind Basket aims to provide useful price comparisons and savings estimates, but supermarket pricing can change quickly. Information is provided on an "as is" basis and should be checked before purchase.
+            We do not guarantee that prices are always accurate or current, that any savings shown will be achieved, or that the Service will always identify the cheapest option. All savings figures are estimates based on available data.
           </p>
         </article>
         <article>
-          <h2>3. Accounts and access</h2>
+          <h2>4. Product Comparisons &amp; Substitutions</h2>
+          <ul>
+            <li>Items may not be identical</li>
+            <li>Differences in brand, quality, size, or ingredients may exist</li>
+            <li>Substitutions are clearly marked where applicable</li>
+          </ul>
+          <p>Users are responsible for verifying suitability before purchase.</p>
+        </article>
+        <article>
+          <h2>5. Retailer Independence</h2>
+          <ul>
+            <li>Kind Basket is independent of all retailers unless explicitly stated</li>
+            <li>We do not control retailer pricing or stock</li>
+            <li>Retailers may change prices without notice</li>
+            <li>Final purchase terms are governed by the retailer</li>
+          </ul>
+        </article>
+        <article>
+          <h2>6. Affiliate &amp; Revenue Disclosure</h2>
+          <ul>
+            <li>We may receive compensation through affiliate links, gift card partnerships, or retail integrations</li>
+            <li>This does not influence rankings or recommendations, unless clearly stated</li>
+          </ul>
+        </article>
+        <article>
+          <h2>7. User Responsibilities</h2>
+          <ul>
+            <li>To use the Service lawfully</li>
+            <li>Not to misuse or attempt to manipulate the system</li>
+            <li>Not to rely solely on the Service for purchasing decisions</li>
+          </ul>
+        </article>
+        <article>
+          <h2>8. Intellectual Property</h2>
           <p>
-            If account features are enabled, you are responsible for maintaining account security and for activity carried out under your account. We reserve the right to suspend or terminate accounts for violations of these terms.
+            All content, software, branding, and systems within Kind Basket are owned by or licensed to Kind Basket Ltd and protected by intellectual property laws. You may not copy, reproduce, or reverse engineer any part of the Service or use our data or systems for commercial purposes without permission.
           </p>
         </article>
         <article>
-          <h2>4. User-generated content</h2>
+          <h2>9. Limitation of Liability</h2>
           <p>
-            If you submit content to Kind Basket, you grant us a non-exclusive, royalty-free, worldwide license to use, display, and distribute that content in connection with the service. You are responsible for ensuring your content does not infringe any rights or laws.
+            To the fullest extent permitted by law, Kind Basket is not liable for pricing inaccuracies, missed savings, retailer errors or changes, or loss arising from reliance on the Service.
           </p>
         </article>
         <article>
-          <h2>5. Intellectual property</h2>
+          <h2>10. Availability of Service</h2>
+          <ul>
+            <li>We do not guarantee uninterrupted access</li>
+            <li>We may modify or discontinue features, update pricing sources or logic, or restrict access if necessary</li>
+          </ul>
+        </article>
+        <article>
+          <h2>11. Termination</h2>
+          <ul>
+            <li>We may suspend or terminate access if these Terms are breached or fraudulent/abusive behaviour is detected</li>
+          </ul>
+        </article>
+        <article>
+          <h2>12. Changes to Terms</h2>
           <p>
-            Kind Basket branding, software, and content are protected by applicable intellectual property laws. You may not copy or reuse them without permission.
+            We may update these Terms at any time. Continued use constitutes acceptance.
           </p>
         </article>
         <article>
-          <h2>6. Limitation of liability</h2>
-          <p>
-            To the fullest extent permitted by law, Kind Basket Ltd is not liable for any indirect, incidental, or consequential damages arising from your use of the service.
-          </p>
+          <h2>13. Governing Law</h2>
+          <p>These Terms are governed by the laws of England and Wales.</p>
         </article>
         <article>
-          <h2>7. Changes and availability</h2>
-          <p>
-            We may update, suspend, or discontinue parts of the service and may revise these terms from time to time. Continued use after updates means you accept the revised terms.
-          </p>
-        </article>
-        <article>
-          <h2>8. Governing law</h2>
-          <p>
-            Unless otherwise required by law, these terms are governed by the laws of England and Wales.
-          </p>
-        </article>
-        <article>
-          <h2>9. Severability and entire agreement</h2>
-          <p>
-            If any part of these terms is found invalid, the remainder will remain in effect. These terms constitute the entire agreement between you and Kind Basket regarding the service.
-          </p>
-        </article>
-        <article>
-          <h2>10. Contact</h2>
-          <p>
-            Questions about these terms can be sent through the Contact page.
-          </p>
+          <h2>14. Contact</h2>
+          <p>For questions about these Terms, contact <a href="mailto:hello@kindbasket.app">hello@kindbasket.app</a>.</p>
         </article>
       </>
     </StaticPageLayout>
@@ -261,6 +454,9 @@ function App() {
       <Route path="/" element={<LandingPage />} />
       <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
       <Route path="/terms-of-use" element={<TermsOfUsePage />} />
+      <Route path="/cookie-policy" element={<CookiePolicyPage />} />
+      <Route path="/pricing-disclaimer" element={<PricingDisclaimerPage />} />
+      <Route path="/affiliate-disclosure" element={<AffiliateDisclosurePage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
