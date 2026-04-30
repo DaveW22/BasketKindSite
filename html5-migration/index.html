@@ -1,0 +1,225 @@
+<!-- Pixel-polished, premium, high-converting Kind Basket homepage redesign -->
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kind Basket – Compare Supermarket Prices & Save on Your Weekly Shop</title>
+  <meta name="description" content="Build your shopping list, compare UK supermarket prices, and optimise your weekly shop to save money with Kind Basket.">
+  <meta property="og:title" content="Kind Basket – Compare Supermarket Prices & Save on Your Weekly Shop">
+  <meta property="og:description" content="Build your shopping list, compare UK supermarket prices, and optimise your weekly shop to save money with Kind Basket.">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#184c32">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="assets/site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="Kind Basket">
+  <meta name="application-name" content="Kind Basket">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header class="site-header">
+    <div class="brand-lockup">
+      <img src="assets/logo.png" alt="Kind Basket logo" class="site-logo-large" onerror="this.onerror=null;this.src='assets/Website Logo large.png';">
+      <span class="brand-name">Kind Basket</span>
+    </div>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#how-it-works">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#trust">Trust</a>
+      <button class="btn btn-primary nav-cta" onclick="document.getElementById('waitlist').scrollIntoView({behavior:'smooth'});">Join Waitlist</button>
+    </nav>
+  </header>
+  <main id="main">
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero hero-grid">
+      <div class="hero-col hero-text-col">
+        <div class="eyebrow">UK grocery savings, made simple</div>
+        <h1>Stop overpaying for your weekly shop.</h1>
+        <p class="hero-subhead">Kind Basket helps you build your list, compare supermarket prices, and optimise your basket so you can make smarter savings every week.</p>
+        <div class="hero-ctas">
+          <button class="btn btn-primary" onclick="document.getElementById('waitlist').scrollIntoView({behavior:'smooth'});">Join the Waitlist</button>
+          <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
+        </div>
+        <div class="micro-trust-row">
+          <span>UK grocery focused</span>
+          <span>Estimated savings</span>
+          <span>Free at launch</span>
+        </div>
+      </div>
+      <div class="hero-col hero-preview-col">
+        <div class="app-preview-card" aria-label="App preview">
+          <div class="preview-title">Your optimised basket</div>
+          <div class="preview-metric">Estimated saving <span class="preview-saving">£8.70</span></div>
+          <div class="basket-comparison">
+            <div class="basket-row"><span>Normal shop</span><span>£42.80</span></div>
+            <div class="basket-row"><span>Optimised shop</span><span>£34.10</span></div>
+          </div>
+          <div class="store-comparison">
+            <div class="store-row">Tesco <span>£42.80</span></div>
+            <div class="store-row">Aldi <span>£36.20</span></div>
+            <div class="store-row best">Lidl <span>£34.10</span> <span class="best-badge">Best value</span></div>
+          </div>
+          <div class="swap-suggestion">
+            <span>Heinz Tomato Ketchup</span>
+            <span class="arrow">→</span>
+            <span>Store Brand Tomato Ketchup</span>
+            <span class="swap-saving">Save £1.20</span>
+          </div>
+          <div class="compliance-note">Estimated savings based on available price data. Final retailer prices may vary.</div>
+        </div>
+      </div>
+    </section>
+    <!-- ===== TRUST STRIP ===== -->
+    <section class="trust-strip" id="trust">
+      <ul>
+        <li>Transparent comparisons</li>
+        <li>UK supermarket focused</li>
+        <li>Privacy-first</li>
+        <li>No guaranteed savings claims</li>
+      </ul>
+    </section>
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="how-it-works" id="how-it-works">
+      <h2>From list to savings in four simple steps.</h2>
+      <div class="steps steps-arrow-between">
+        <div class="step">
+          <span class="step-number">1</span>
+          <h3>Build Your List</h3>
+          <p>Add the items you already buy.</p>
+        </div>
+        <div class="steps-arrow" aria-hidden="true">→</div>
+        <div class="step">
+          <span class="step-number">2</span>
+          <h3>Check Prices</h3>
+          <p>We check available prices across supported supermarkets.</p>
+        </div>
+        <div class="steps-arrow" aria-hidden="true">→</div>
+        <div class="step">
+          <span class="step-number">3</span>
+          <h3>Compare Stores</h3>
+          <p>See where your full basket costs less.</p>
+        </div>
+        <div class="steps-arrow" aria-hidden="true">→</div>
+        <div class="step">
+          <span class="step-number">4</span>
+          <h3>Optimise & Save ££</h3>
+          <p>Find smarter swaps and lower-cost basket options.</p>
+        </div>
+      </div>
+    </section>
+    <!-- ===== NORMAL SHOP VS KIND BASKET ===== -->
+    <section class="comparison-section">
+      <div class="comparison-card">
+        <div class="comparison-col normal-shop">
+          <h3>Normal shopping</h3>
+          <ul>
+            <li>Pick one store and hope it’s cheapest</li>
+            <li>Miss better prices elsewhere</li>
+            <li>Manually compare offers</li>
+            <li>Overspend without noticing</li>
+          </ul>
+        </div>
+        <div class="comparison-col kind-basket">
+          <h3>With Kind Basket</h3>
+          <ul>
+            <li>Compare your basket across stores</li>
+            <li>See estimated savings clearly</li>
+            <li>Spot better-value swaps</li>
+            <li>Make smarter weekly choices</li>
+          </ul>
+        </div>
+      </div>
+      <div class="comparison-bottom">Same list. Smarter shop. More money saved.</div>
+    </section>
+    <!-- ===== FEATURES SECTION ===== -->
+    <section class="features" id="features">
+      <h2>Built for real weekly shops.</h2>
+      <div class="feature-cards">
+        <div class="feature-card">
+          <h3>Basket price comparison</h3>
+          <p>See which supermarket is cheapest for your full basket, not just a few items.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Store-by-store breakdowns</h3>
+          <p>Get a clear breakdown of prices at Tesco, Aldi, Lidl and more.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Smart substitutions</h3>
+          <p>Find better-value swaps for branded and own-label items.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Estimated savings tracking</h3>
+          <p>Track how much you could save each week and over time.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Simple reusable shopping lists</h3>
+          <p>Build, edit and reuse your lists for every shop.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Future receipt rewards</h3>
+          <p>Earn rewards for sharing your receipts (coming soon).</p>
+        </div>
+      </div>
+    </section>
+    <!-- ===== TRUST & TRANSPARENCY SECTION ===== -->
+    <section class="trust-transparency-section" id="trust">
+      <h2>Built to earn your trust.</h2>
+      <div class="trust-cards">
+        <div class="trust-card">
+          <h3>Clear savings logic</h3>
+          <p>Estimated savings are labelled clearly, so you understand what they are based on.</p>
+        </div>
+        <div class="trust-card">
+          <h3>Retailer independence</h3>
+          <p>Kind Basket does not control retailer prices, promotions or stock availability.</p>
+        </div>
+        <div class="trust-card">
+          <h3>Privacy-first by design</h3>
+          <p>We only ask for what we need to provide and improve the service.</p>
+        </div>
+      </div>
+      <a href="legal/pricing-disclaimer.html" class="trust-link">Read our Pricing & Savings Disclaimer</a>
+    </section>
+    <!-- ===== SEO CONTENT SECTION ===== -->
+    <section class="seo-content-section">
+      <h2>Compare UK supermarket prices before you shop.</h2>
+      <p>Kind Basket is the new way to <strong>compare supermarket prices</strong> and save money on groceries in the UK. Our <strong>grocery price comparison UK</strong> tool helps you find the <strong>cheapest supermarket for your basket</strong>—whether you shop at Tesco, Aldi, Lidl or other major UK supermarkets. Build your list, check prices, and see where your <strong>weekly shop savings</strong> could be highest before you even leave home.</p>
+      <p>With Kind Basket, you can compare prices across stores, spot better-value swaps, and make smarter choices every week. We’re here to help you <strong>save money on groceries</strong> and get the most out of your shopping budget, all with a friendly, privacy-first approach.</p>
+    </section>
+    <!-- ===== WAITLIST CTA SECTION ===== -->
+    <section class="waitlist-section" id="waitlist">
+      <h2>Be first to save smarter.</h2>
+      <p class="waitlist-subhead">Join the Kind Basket waitlist for early access, launch updates and first access to new savings features.</p>
+      <form class="waitlist-form" action="" method="post" autocomplete="email">
+        <!-- TODO: Add real form action/integration -->
+        <label for="waitlist-email" class="visually-hidden">Email address</label>
+        <input type="email" id="waitlist-email" name="email" placeholder="Enter your email" required>
+        <button type="submit" class="btn btn-primary">Join the Waitlist</button>
+      </form>
+      <div class="waitlist-microcopy">No spam. Just launch updates and early access.</div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <img src="assets/logo.png" alt="Kind Basket logo" class="site-logo-large" onerror="this.onerror=null;this.src='assets/Website Logo large.png';">
+      <span class="brand-name">Kind Basket</span>
+    </div>
+    <p class="footer-desc">Helping UK households compare grocery prices and make smarter weekly shopping choices.</p>
+    <nav aria-label="Footer links" class="footer-links">
+      <a href="legal/terms.html">Terms</a>
+      <a href="legal/privacy.html">Privacy</a>
+      <a href="legal/cookies.html">Cookies</a>
+      <a href="legal/pricing-disclaimer.html">Pricing Disclaimer</a>
+      <a href="legal/affiliate-disclosure.html">Affiliate Disclosure</a>
+      <a href="mailto:hello@kindbasket.app">Contact</a>
+    </nav>
+    <p>&copy; 2026 Kind Basket</p>
+  </footer>
+  <script src="./script.js"></script>
+</body>
+</html>
