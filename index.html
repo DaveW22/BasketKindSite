@@ -5,21 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Kind Basket helps UK shoppers build lists, compare supermarket prices, and track savings over time."
+      content="Mode controller for the Kind Basket landing system."
     />
-    <title>Kind Basket | Save more on every shop</title>
-    <!-- Kind Basket favicons / home screen icons -->
-    <link rel="icon" href="/src/Assets/favicon.ico" sizes="any">
-    <link rel="icon" type="image/png" sizes="32x32" href="/src/Assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/src/Assets/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/src/Assets/apple-touch-icon.png">
-    <link rel="manifest" href="/src/Assets/site.webmanifest">
-    <meta name="theme-color" content="#2E7D32">
-    <meta name="apple-mobile-web-app-title" content="Kind Basket">
-    <meta name="application-name" content="Kind Basket">
+    <title>Kind Basket</title>
+    <link rel="icon" href="assets/favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/apple-touch-icon.png"
+    />
+    <meta name="theme-color" content="#184c32" />
+    <script>
+      const MODE = "coming-soon";
+
+      const modeTargets = {
+        "coming-soon": "pages/coming-soon.html",
+        maintenance: "pages/maintenance.html",
+        live: "pages/home.html"
+      };
+
+      const target = modeTargets[MODE] || modeTargets["coming-soon"];
+      window.location.replace(target);
+    </script>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <noscript>
+      <p><a href="pages/coming-soon.html">Continue to Kind Basket</a></p>
+    </noscript>
   </body>
 </html>
