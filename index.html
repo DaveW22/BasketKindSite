@@ -3,20 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kind Basket | Coming Soon</title>
-  <meta name="description" content="Kind Basket is getting ready to help you stop overpaying for your weekly shop. Join the waitlist for early access.">
+  <title>Kind Basket – Compare Supermarket Prices &amp; Save on Your Weekly Shop</title>
+  <meta name="description" content="Build your shopping list, compare UK supermarket prices and optimise your weekly shop to save money with Kind Basket.">
   <!--
-    DEPLOYMENT NOTE (v2026-05-01):
-    index.html now renders the coming-soon page directly.
-    No JavaScript redirect is used.
-    To switch modes, replace this file's content with pages/home.html
-    (adjusting paths from ../ to ./) or pages/maintenance.html.
-    The /pages/ versions are kept as authored working copies.
+    DEPLOYMENT NOTE (v2026-05-03 V3):
+    This is the V3 high-conversion coming-soon homepage.
+    Backup of previous version: index.backup-v3.html
+    To switch to maintenance mode replace content with pages/maintenance.html (adjust paths).
   -->
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#184c32">
-  <meta property="og:title" content="Kind Basket - Coming Soon">
-  <meta property="og:description" content="Kind Basket is getting ready to help you stop overpaying for your weekly shop.">
+  <meta property="og:title" content="Kind Basket – Compare Supermarket Prices &amp; Save on Your Weekly Shop">
+  <meta property="og:description" content="Build your shopping list, compare UK supermarket prices and optimise your weekly shop to save money with Kind Basket.">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
@@ -25,96 +23,184 @@
   <link rel="manifest" href="assets/site.webmanifest">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="mode-page mode-page-coming-soon">
+<body class="v3-page">
   <a href="#main" class="skip-link">Skip to main content</a>
-  <header class="site-header mode-header">
+
+  <header class="site-header">
     <div class="brand-lockup">
       <img src="assets/logo.png" alt="Kind Basket logo" class="site-logo-large">
       <span class="brand-name">Kind Basket</span>
     </div>
   </header>
 
-  <main id="main" class="mode-main-wrap">
-    <section class="hero hero-grid mode-hero">
-      <div class="hero-col hero-text-col">
-        <div class="eyebrow">Coming soon</div>
+  <main id="main" class="v3-main">
+
+    <!-- ===================== 1. HERO ===================== -->
+    <section class="v3-hero" aria-label="Hero">
+      <div class="v3-hero-text">
+        <p class="v3-eyebrow">Coming soon &mdash; grocery price comparison UK</p>
         <h1>Stop overpaying for your weekly shop.</h1>
-        <p class="hero-subhead">Kind Basket is building a clearer way to compare supermarket baskets, spot better value and plan smarter weekly shops without the noise.</p>
-        <div class="hero-ctas">
-          <a href="#waitlist" class="btn btn-primary">Join the Waitlist</a>
-          <a href="#trust-signals" class="btn btn-secondary">Why people will trust it</a>
+        <p class="v3-subhead">Most UK households spend more than they need to. Kind Basket shows you where you can save &mdash; before you shop.</p>
+        <div class="v3-hero-ctas">
+          <a href="#waitlist" class="btn btn-primary btn-lg">Get Early Access</a>
+          <a href="#how-it-works" class="btn btn-secondary btn-lg">See How It Works</a>
         </div>
-        <div class="micro-trust-row">
+        <p class="v3-cta-micro">Limited early access spots. No spam &mdash; just launch updates.</p>
+        <div class="v3-micro-trust">
           <span>UK grocery focused</span>
           <span>Clear savings logic</span>
-          <span>Built for weekly shops</span>
+          <span>Free at launch</span>
         </div>
       </div>
-      <div class="hero-col hero-preview-col">
-        <div class="app-preview-card" aria-label="Simple app preview card">
-          <div class="preview-title">Preview</div>
-          <div class="preview-metric">Weekly basket <span class="preview-saving">&pound;7.40 saved</span></div>
-          <div class="basket-comparison">
-            <div class="basket-row"><span>Your usual basket</span><span>&pound;46.30</span></div>
-            <div class="basket-row"><span>Best matched basket</span><span>&pound;38.90</span></div>
+      <div class="v3-hero-preview">
+        <div class="v3-app-card" aria-label="Example savings preview">
+          <p class="v3-card-label">Your shop, optimised</p>
+          <div class="v3-saving-moment">
+            <span class="v3-price-before">&pound;42.80</span>
+            <span class="v3-arrow-right" aria-hidden="true">&rarr;</span>
+            <span class="v3-price-after">&pound;34.10</span>
           </div>
-          <div class="store-comparison">
-            <div class="store-row">Tesco <span>&pound;46.30</span></div>
-            <div class="store-row">Asda <span>&pound;41.10</span></div>
-            <div class="store-row best">Aldi <span>&pound;38.90</span> <span class="best-badge">Lowest today</span></div>
+          <p class="v3-saving-caption">You could save <strong>&pound;8.70</strong> this shop</p>
+          <div class="v3-basket-rows">
+            <div class="v3-basket-row">
+              <span>Normal shop</span>
+              <span class="v3-price-normal">&pound;42.80</span>
+            </div>
+            <div class="v3-basket-row v3-basket-row--optimised">
+              <span>Optimised shop</span>
+              <span>&pound;34.10</span>
+            </div>
+            <div class="v3-basket-row">
+              <span>Estimated saving</span>
+              <span class="v3-price-saving">&pound;8.70</span>
+            </div>
           </div>
-          <div class="compliance-note">Illustrative preview only. Final pricing and stock always depend on retailers.</div>
+          <div class="v3-best-store">
+            <span class="v3-best-label">Best value store</span>
+            <span class="v3-best-store-name">Lidl</span>
+          </div>
+          <div class="v3-swap">
+            <span class="v3-swap-label">Suggested swap:</span>
+            Heinz Ketchup &rarr; Store Brand <span class="v3-swap-save">Save &pound;1.20</span>
+          </div>
+          <p class="v3-compliance">Estimated savings based on available price data. Final retailer prices may vary.</p>
         </div>
       </div>
     </section>
 
-    <section class="trust-strip" id="trust-signals">
-      <ul>
-        <li>Transparent comparisons</li>
-        <li>Privacy-conscious approach</li>
-        <li>Designed around real household budgets</li>
-      </ul>
+    <hr class="v3-section-divider" aria-hidden="true">
+
+    <!-- ===================== 2. WITHOUT vs WITH ===================== -->
+    <section class="v3-without-with" id="compare" aria-labelledby="ww-heading">
+      <h2 id="ww-heading">Shopping without Kind Basket costs more than you think.</h2>
+      <div class="v3-ww-grid">
+        <div class="v3-ww-card v3-ww-card--without">
+          <h3>Without Kind Basket</h3>
+          <ul>
+            <li>You pick one shop and assume it&rsquo;s cheapest</li>
+            <li>Prices vary more than you think</li>
+            <li>You miss cheaper alternatives</li>
+            <li>You overspend every week without noticing</li>
+          </ul>
+        </div>
+        <div class="v3-ww-card v3-ww-card--with">
+          <h3>With Kind Basket</h3>
+          <ul>
+            <li>Compare your full basket before you shop</li>
+            <li>See estimated savings clearly</li>
+            <li>Spot smarter substitutions</li>
+            <li>Choose the best-value basket</li>
+            <li>Keep more money every shop</li>
+          </ul>
+        </div>
+      </div>
+      <p class="v3-ww-bottom">Same list. Smarter shop. More money saved.</p>
     </section>
 
-    <section class="mode-info-grid" aria-label="Information about Kind Basket">
-      <article class="mode-info-card">
-        <h2>What to expect</h2>
-        <p>Kind Basket is being built to help households compare baskets across supported supermarkets and make faster, more confident shopping decisions.</p>
-      </article>
-      <article class="mode-info-card">
-        <h2>Why join early</h2>
-        <p>Waitlist members will receive launch updates, early access opportunities and the first look at new savings features.</p>
-      </article>
-      <article class="mode-info-card">
-        <h2>How it will help</h2>
-        <p>From reusable lists to clearer savings estimates, the goal is a simpler planning flow that respects time, budgets and trust.</p>
-      </article>
+    <hr class="v3-section-divider" aria-hidden="true">
+
+    <!-- ===================== 3. HOW IT WORKS ===================== -->
+    <section class="v3-how-it-works" id="how-it-works" aria-labelledby="hiw-heading">
+      <h2 id="hiw-heading">Build Your List &rarr; Check Prices &rarr; Compare Stores &rarr; Optimise &amp; Save &pound;&pound;</h2>
+      <div class="v3-steps">
+        <div class="v3-step">
+          <span class="v3-step-num" aria-hidden="true">1</span>
+          <h3>Build Your List</h3>
+          <p>Add the groceries you already buy.</p>
+        </div>
+        <div class="v3-step">
+          <span class="v3-step-num" aria-hidden="true">2</span>
+          <h3>Check Prices</h3>
+          <p>See available prices across supported UK supermarkets.</p>
+        </div>
+        <div class="v3-step">
+          <span class="v3-step-num" aria-hidden="true">3</span>
+          <h3>Compare Stores</h3>
+          <p>Understand where your full basket costs less.</p>
+        </div>
+        <div class="v3-step">
+          <span class="v3-step-num" aria-hidden="true">4</span>
+          <h3>Optimise &amp; Save &pound;&pound;</h3>
+          <p>Find better-value swaps and lower-cost basket options.</p>
+        </div>
+      </div>
     </section>
 
-    <section class="waitlist-section mode-waitlist" id="waitlist">
-      <h2>Join the waitlist</h2>
-      <p class="waitlist-subhead">Register your email for launch updates and early access invitations.</p>
+    <hr class="v3-section-divider" aria-hidden="true">
+
+    <!-- ===================== 4. TRUST & WHY ===================== -->
+    <section class="v3-trust" id="trust" aria-labelledby="trust-heading">
+      <h2 id="trust-heading">Built to help you save without the guesswork.</h2>
+      <div class="v3-trust-grid">
+        <div class="v3-trust-card">
+          <h3>Transparent savings</h3>
+          <p>Estimated savings are clearly labelled, never hidden.</p>
+        </div>
+        <div class="v3-trust-card">
+          <h3>UK grocery focused</h3>
+          <p>Designed around real UK weekly shops and top-up shops.</p>
+        </div>
+        <div class="v3-trust-card">
+          <h3>Privacy-first</h3>
+          <p>We only ask for what we need to provide the service.</p>
+        </div>
+        <div class="v3-trust-card">
+          <h3>No misleading claims</h3>
+          <p>Retailer prices, promotions and stock can change, so final prices may vary.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 5. FINAL WAITLIST CTA ===================== -->
+    <section class="v3-waitlist" id="waitlist" aria-labelledby="wl-heading">
+      <h2 id="wl-heading">Be first to save smarter.</h2>
+      <p class="v3-waitlist-sub">Join the Kind Basket waitlist for early access, launch updates and first access to new savings features.</p>
       <form class="waitlist-form" action="https://formspree.io/f/mwvadlwy" method="post" autocomplete="email">
-        <input type="hidden" name="source" value="coming-soon-root">
-        <label for="cs-email" class="visually-hidden">Email address</label>
-        <input type="email" id="cs-email" name="email" placeholder="Enter your email" required autocomplete="email">
-        <button type="submit" class="btn btn-primary">Join the Waitlist</button>
+        <input type="hidden" name="source" value="v3-homepage">
+        <label for="v3-email" class="visually-hidden">Email address</label>
+        <input type="email" id="v3-email" name="email" placeholder="Enter your email" required autocomplete="email">
+        <button type="submit" class="btn btn-primary">Get Early Access</button>
       </form>
       <div class="waitlist-status" aria-live="polite"></div>
-      <div class="waitlist-microcopy">No spam. Just updates when there is something worth sending.</div>
+      <p class="v3-waitlist-micro">Limited early access spots. No spam.</p>
     </section>
+
   </main>
 
+  <!-- ===================== 6. FOOTER ===================== -->
   <footer class="site-footer">
     <div class="footer-brand">
       <img src="assets/logo.png" alt="Kind Basket logo" class="site-logo-large">
       <span class="brand-name">Kind Basket</span>
     </div>
-    <p class="footer-desc">Preparing a calmer, smarter way to plan your weekly shop.</p>
+    <p class="footer-desc">A smarter, calmer way to plan your weekly shop.</p>
     <nav aria-label="Footer links" class="footer-links">
       <a href="legal/privacy.html">Privacy</a>
       <a href="legal/terms.html">Terms</a>
       <a href="legal/cookies.html">Cookies</a>
+      <a href="legal/pricing-disclaimer.html">Pricing Disclaimer</a>
+      <a href="legal/affiliate-disclosure.html">Affiliate Disclosure</a>
+      <a href="legal/legal-hub.html">Legal Hub</a>
       <a href="mailto:hello@kindbasket.app">Contact</a>
     </nav>
   </footer>
