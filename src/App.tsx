@@ -1,7 +1,43 @@
 import { Navigate, Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
 import AuthVerifiedPage from "./AuthVerifiedPage";
 import LandingPage from "./LandingPage";
 import PolicyLayout from "./PolicyLayout";
+
+function usePageMeta(title: string, description: string) {
+  useEffect(() => {
+    const previousTitle = document.title;
+    const descriptionSelector = 'meta[name="description"]';
+    const existingDescription = document.querySelector<HTMLMetaElement>(descriptionSelector);
+    const previousDescription = existingDescription?.getAttribute("content") ?? null;
+
+    document.title = title;
+
+    if (existingDescription) {
+      existingDescription.setAttribute("content", description);
+    } else {
+      const createdDescription = document.createElement("meta");
+      createdDescription.name = "description";
+      createdDescription.content = description;
+      document.head.appendChild(createdDescription);
+    }
+
+    return () => {
+      document.title = previousTitle;
+
+      const currentDescription = document.querySelector<HTMLMetaElement>(descriptionSelector);
+      if (!currentDescription) {
+        return;
+      }
+
+      if (previousDescription !== null) {
+        currentDescription.setAttribute("content", previousDescription);
+      } else {
+        currentDescription.remove();
+      }
+    };
+  }, [title, description]);
+}
 
 function PrivacyPolicyPage() {
   return (
@@ -140,6 +176,119 @@ function AffiliateDisclosurePage() {
   );
 }
 
+function BrandRightsPage() {
+  usePageMeta(
+    "Brand Rights & Trade Mark Notice | Kind Basket",
+    "Learn about Kind Basket™ brand rights, trade mark notice, copyright ownership and third-party trade mark references."
+  );
+
+  return (
+    <PolicyLayout
+      title="Brand Rights & Trade Mark Notice"
+      summary="This notice outlines the brand rights we claim in Kind Basket™ and how third-party names are referenced for informational and comparison purposes."
+      effectiveDate="2 June 2026"
+      lastUpdated="2 June 2026"
+      version="1.0"
+    >
+      <>
+        <article>
+          <h2>About Kind Basket™</h2>
+          <p>
+            Kind Basket™ is a UK-based grocery savings and shopping optimisation
+            service currently in development.
+          </p>
+        </article>
+
+        <article>
+          <h2>Brand Rights Ownership</h2>
+          <p>
+            The Kind Basket™ name, logo, visual identity, mascot, product concepts,
+            website content, interface designs, copy, graphics, domain names, social
+            media handles and related brand assets are currently owned by the founder
+            of the Kind Basket™ project, unless otherwise stated.
+          </p>
+          <p>
+            Following formal business registration, ownership of these brand assets
+            may be assigned, transferred or licensed to Cynevor Group Ltd or another
+            associated company. This notice will be updated to reflect any such
+            change.
+          </p>
+          <p>
+            We use the ™ symbol to indicate that we claim trade mark rights in the
+            Kind Basket™ name and associated brand identity. A formal UK trade mark
+            application may be prepared and submitted for the relevant goods and
+            services connected with grocery price comparison, shopping list
+            optimisation, consumer savings tools, food waste reduction, digital
+            applications, software services and related online services.
+          </p>
+          <p>
+            No permission is granted to copy, imitate, register, use, reproduce,
+            adapt or create confusingly similar branding, names, logos, mascots,
+            domain names, social handles, product designs or commercial materials
+            connected with Kind Basket™.
+          </p>
+        </article>
+
+        <article>
+          <h2>Copyright Notice</h2>
+          <p>
+            All website text, designs, graphics, icons, layouts, illustrations,
+            product concepts and original creative works are protected by copyright
+            from the date of creation. Unauthorised use, copying, adaptation,
+            distribution or reproduction may result in legal action.
+          </p>
+        </article>
+
+        <article>
+          <h2>Third-Party Trade Marks</h2>
+          <p>
+            References to supermarkets, retailers, product names, third-party logos
+            or third-party trade marks are for descriptive, compatibility, comparison
+            or informational purposes only.
+          </p>
+          <p>
+            Kind Basket™ is independent and is not endorsed by, affiliated with, or
+            sponsored by any supermarket, retailer or third-party brand unless
+            expressly stated.
+          </p>
+        </article>
+
+        <article>
+          <h2>Permitted References</h2>
+          <p>
+            You may refer to Kind Basket™ in normal editorial, review, commentary or
+            news contexts, provided that the reference is accurate, fair,
+            non-misleading and does not imply endorsement, partnership or ownership.
+          </p>
+          <p>
+            You may not use the Kind Basket™ name, logo, mascot, brand identity or
+            confusingly similar branding in a way that suggests you own, operate,
+            represent or are affiliated with Kind Basket™.
+          </p>
+        </article>
+
+        <article>
+          <h2>Contact</h2>
+          <p>
+            If you believe any material on this site infringes your rights, or if
+            you wish to request permission to use any Kind Basket™ brand asset,
+            please contact:
+          </p>
+          <p>
+            <a href="mailto:trademark@kindbasket.co.uk">trademark@kindbasket.co.uk</a>
+          </p>
+        </article>
+
+        <aside className="policy-disclaimer-box" aria-label="Notice disclaimer">
+          This notice is provided for general brand protection and transparency
+          purposes. It does not replace formal trade mark registration or legal
+          advice.
+        </aside>
+      </>
+    </PolicyLayout>
+  );
+}
+
 function App() {
   return (
     <Routes>
@@ -149,6 +298,7 @@ function App() {
       <Route path="/terms-of-use" element={<TermsOfUsePage />} />
       <Route path="/pricing-disclaimer" element={<PricingDisclaimerPage />} />
       <Route path="/affiliate-disclosure" element={<AffiliateDisclosurePage />} />
+      <Route path="/brand-rights" element={<BrandRightsPage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

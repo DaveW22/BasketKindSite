@@ -64,11 +64,14 @@ export default function PolicyLayout({
           <Link to="/cookie-policy">Cookies</Link>
           <Link to="/pricing-disclaimer">Pricing Disclaimer</Link>
           <Link to="/affiliate-disclosure">Affiliate Disclosure</Link>
+          <Link to="/brand-rights">Brand Rights</Link>
           <Link to="/contact">Contact</Link>
         </nav>
-        <p className="brand-name">Kind Basket</p>
+        <p className="brand-name">Kind Basket™</p>
         <p>Smarter grocery shopping, made simple.</p>
-        <p>Copyright 2026 Kind Basket</p>
+        <p>
+          © 2026 Kind Basket. Kind Basket™ and Bram™ are claimed trade marks of their owner. All rights reserved.
+        </p>
       </footer>
     </div>
   );

@@ -413,15 +413,18 @@ function LandingPage() {
 
       <footer className="site-footer">
         <div>
-          <p className="brand-name">Kind Basket</p>
+          <p className="brand-name">Kind Basket™</p>
           <p>Smarter grocery shopping, made simple.</p>
         </div>
         <nav aria-label="Footer links" className="footer-links">
           <Link to="/privacy-policy">Privacy Policy</Link>
           <Link to="/terms-of-use">Terms of Use</Link>
+          <Link to="/brand-rights">Brand Rights</Link>
           <Link to="/contact">Contact</Link>
         </nav>
-        <p>Copyright 2026 Kind Basket</p>
+        <p>
+          © 2026 Kind Basket. Kind Basket™ and Bram™ are claimed trade marks of their owner. All rights reserved.
+        </p>
       </footer>
     </div>
   );
