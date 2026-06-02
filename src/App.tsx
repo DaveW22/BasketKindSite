@@ -53,7 +53,7 @@ function PrivacyPolicyPage() {
           <h2>1. Who we are</h2>
           <p>
             Kind Basket Ltd is the data controller for the Kind Basket website and app.
-            For privacy requests, contact hello@kindbasket.app.
+            For privacy requests, contact hello@kindbasket.co.uk.
           </p>
         </article>
         <article>
