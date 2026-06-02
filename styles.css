@@ -725,6 +725,14 @@ a {
 .footer-links a:hover {
   background: #e6f4ea;
 }
+.footer-legal-notice {
+  max-width: 900px;
+  margin: 0.9rem auto 0.5rem;
+  padding: 0 1rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: #223322;
+}
 
 /* === Legal Pages Redesign === */
 .summary-card {
