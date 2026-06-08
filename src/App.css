@@ -196,6 +196,11 @@ a {
   box-shadow: 0 10px 18px rgba(46, 125, 50, 0.18);
 }
 
+.btn:focus-visible {
+  outline: 3px solid var(--soft-gold);
+  outline-offset: 3px;
+}
+
 .btn-primary {
   background: linear-gradient(150deg, var(--primary-green), var(--medium-green));
   color: var(--white);
@@ -248,6 +253,11 @@ a {
   flex-wrap: wrap;
   gap: 0.7rem;
   margin-top: 1.2rem;
+}
+
+.hero-support {
+  margin-top: 0.85rem;
+  font-size: 0.95rem;
 }
 
 .hero-visual-wrap {
@@ -320,6 +330,22 @@ a {
   font-size: 0.9rem;
 }
 
+.save-mode-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.85rem;
+}
+
+.save-mode-row span {
+  border-radius: 999px;
+  padding: 0.22rem 0.48rem;
+  background: rgba(46, 125, 50, 0.12);
+  color: #1f5c24;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
 .screen-title {
   font-size: 0.82rem;
   text-transform: uppercase;
@@ -374,6 +400,17 @@ a {
   margin-top: 1.15rem;
 }
 
+.section-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.2rem;
+}
+
+.step-list {
+  padding-left: 0;
+  list-style: none;
+}
+
 .info-card,
 .feature-card,
 .phone-card {
@@ -420,6 +457,59 @@ a {
 .feature-card p {
   margin: 0.55rem 0 0;
   color: rgba(44, 44, 44, 0.8);
+}
+
+.feature-card .feature-label {
+  margin-top: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--primary-green);
+}
+
+.feature-list {
+  margin: 0.85rem 0 0;
+  padding-left: 1.1rem;
+  color: rgba(44, 44, 44, 0.82);
+  line-height: 1.55;
+}
+
+.feature-list li + li {
+  margin-top: 0.24rem;
+}
+
+.future-vision {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 20px;
+  border: 1px solid rgba(46, 125, 50, 0.14);
+  background: rgba(232, 245, 233, 0.58);
+}
+
+.future-vision p {
+  margin: 0;
+  color: rgba(44, 44, 44, 0.8);
+}
+
+.future-vision p + p {
+  margin-top: 0.4rem;
+}
+
+.future-vision h3 {
+  margin: 0.35rem 0 0;
+}
+
+.mission-card {
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.roadmap-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.15rem;
 }
 
 .showcase-grid {
@@ -577,6 +667,11 @@ a {
   color: #9c3a2d;
   font-size: 0.9rem;
   font-weight: 560;
+}
+
+.waitlist-reassurance {
+  margin: 0.85rem 0 0;
+  color: rgba(44, 44, 44, 0.72);
 }
 
 .site-footer {
@@ -928,7 +1023,15 @@ a {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .four-up {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .roadmap-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -979,6 +1082,10 @@ a {
 }
 
 @media (min-width: 1024px) {
+  .four-up {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
   .feature-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
