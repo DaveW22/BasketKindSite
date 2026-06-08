@@ -66,7 +66,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         if (!response.ok) {
-          throw new Error('Request failed');
+          let message = '';
+          try {
+            const data = await response.clone().json();
+            message = data && typeof data.error === 'string' ? data.error : '';
+          } catch (parseError) {
+            message = await response.text();
+          }
+
+          if (
+            response.status === 403 &&
+            /reCAPTCHA|custom key|submit via AJAX/i.test(message)
+          ) {
+            status.textContent = 'One more quick step: opening the spam check to finish your signup.';
+            HTMLFormElement.prototype.submit.call(form);
+            return;
+          }
+
+          throw new Error(message || 'Request failed');
         }
 
         form.reset();
